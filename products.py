@@ -12,3 +12,6 @@ while True: # while loop 常用在不知道要做幾次迴圈的時機
 print(products)
 
 products[0][0] #第一個[大清單的第幾節，第二個[]是小清單的第幾節
+
+for p in products:
+    print(p[0], '的價格是', p[1])
