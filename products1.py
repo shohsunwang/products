@@ -20,6 +20,11 @@ for p in products:
 # 'abc' + '123' = 'abc123'
 # 'abc' * 3 = 'abcabcabc' #幾乎沒有用到這個
 
-with open('products.txt', 'w') as f:  
-    for p in products
-    f.write(p[0] + ',' + p[1] + "\n")
+with open('products1.csv', 'w', encoding = 'utf-8') as f:  
+       #csv可以用excel 開，政府單位歷史資料常用。編碼很常會無法讀取檔案的問題。
+       # 要多增加encoding 'utf-8'，不然會是亂碼。 excel 開啟要用資料匯入有utf-8編碼開啟。 utf-8最有名的編碼
+    f.write('商品,價格\n') #在excel 第一欄增加說明文字
+    for p in products:
+        f.write(p[0] + ',' + p[1] + '\n') #要有','excel開才會分兩個儲存格，和需要分行符號'\n'
+        #with 功能是自動關掉檔案，其他語言需要寫close
+        #因為是寫入模式，不管有沒有檔案都會寫入或覆蓋
